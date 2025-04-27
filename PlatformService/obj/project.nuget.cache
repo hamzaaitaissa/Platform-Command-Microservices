@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "aobtPeVdSm8=",
+  "dgSpecHash": "4mmrwtDkWH8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamza\\OneDrive\\Documents\\c#\\MicroServices\\PlatformService\\PlatformService.csproj",
+  "projectFilePath": "C:\\Users\\hamza\\OneDrive\\Documents\\c#\\Platform-Command-MicroServices\\PlatformService\\PlatformService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\hamza\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\hamza\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\hamza\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\hamza\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\hamza\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\hamza\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\hamza\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
     "C:\\Users\\hamza\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
