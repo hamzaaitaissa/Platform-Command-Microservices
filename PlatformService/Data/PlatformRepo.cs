@@ -4,24 +4,37 @@ namespace PlatformService.Data
 {
     public class PlatformRepo : IPlatformRepo
     {
+        private readonly AppDbContext _context;
+
+        public PlatformRepo(AppDbContext context)
+        {
+            _context = context;
+            
+        }
+
         public void CreatPlatform(Platform platform)
         {
-            throw new NotImplementedException();
+            if(platform == null)
+            {
+                throw new ArgumentNullException(nameof(platform));
+            }
+            _context.Platforms.Add(platform);
         }
 
         public IEnumerable<Platform> GetAllPlatforms()
         {
-            throw new NotImplementedException();
+            return _context.Platforms.ToList();
         }
 
         public Platform GetPlatformById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Platforms.FirstOrDefault(p => p.Id == id);
         }
 
         public bool Savechanges()
         {
-            throw new NotImplementedException();
+            //check if smtng changed
+            return (_context.SaveChanges() >= 0);
         }
     }
 }
