@@ -10,6 +10,7 @@ namespace PlatformService.Profiles
         {
             // Source(Model) -> Target(Dto)
             CreateMap<Platform, PlatformReadDto>();
+            CreateMap<Platform, PlatformCreateDto>();
         }
     }
 }
