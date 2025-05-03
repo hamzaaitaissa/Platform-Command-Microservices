@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using PlatformService.Data;
 using PlatformService.DTOs;
@@ -31,14 +32,10 @@ namespace PlatformService.Controllers
         {
             var platform = _mapper.Map<Platform>(platformCreateDto);
             _platformRepo.CreatPlatform(platform);
-            if (_platformRepo.Savechanges())
-            {
-                return Ok(platform);
-            }
-            else
-            {
-                return BadRequest();
-            }
+            _platformRepo.Savechanges();
+
+            var platformReadDto = _mapper.Map<PlatformReadDto>(platformCreateDto);
+            return CreatedAtRoute(nameof(GetPlatformById), new { Id = platformReadDto.Id },platformReadDto);
 
         }
 
