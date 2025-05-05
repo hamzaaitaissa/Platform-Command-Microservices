@@ -12,7 +12,7 @@ namespace PlatformService.Data
             
         }
 
-        public void CreatPlatform(Platform platform)
+        public void CreatePlatform(Platform platform)
         {
             if(platform == null)
             {
