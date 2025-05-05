@@ -27,23 +27,25 @@ namespace PlatformService.Controllers
             return Ok(platforms);
         }
 
-        [HttpPost]
-        public ActionResult<Platform> CreatePlatform(PlatformCreateDto platformCreateDto)
-        {
-            var platform = _mapper.Map<Platform>(platformCreateDto);
-            _platformRepo.CreatPlatform(platform);
-            _platformRepo.Savechanges();
 
-            var platformReadDto = _mapper.Map<PlatformReadDto>(platform);
-            return CreatedAtRoute(nameof(GetPlatformById), new { Id = platformReadDto.Id },platformReadDto);
 
-        }
-
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetPlatformById")]
         public ActionResult<Platform> GetPlatformById(int id)
         {
             var platform = _platformRepo.GetPlatformById(id);
             return Ok(platform);
+        }
+
+        [HttpPost]
+        public ActionResult<Platform> CreatePlatform(PlatformCreateDto platformCreateDto)
+        {
+            var platform = _mapper.Map<Platform>(platformCreateDto);
+            _platformRepo.CreatePlatform(platform);
+            _platformRepo.Savechanges();
+
+            var platformReadDto = _mapper.Map<PlatformReadDto>(platform);
+            return CreatedAtRoute(nameof(GetPlatformById), new { id = platformReadDto.Id }, platform);
+
         }
 
     }
