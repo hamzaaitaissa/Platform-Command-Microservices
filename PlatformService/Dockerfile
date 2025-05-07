@@ -18,5 +18,5 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 #Take the compiled app from the build box (/app/out) and put it here
 COPY --from=build-env /app/out .
-#When someone runs this Docker container automatically start the app by running: dotnet PlatformService.dll
+#When someone runs this Docker container  automatically start the app by running: dotnet PlatformService.dll
 ENTRYPOINT [ "dotnet", "PlatformService.dll" ]
